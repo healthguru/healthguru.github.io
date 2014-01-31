@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://healthguru.github.io/sitemap.xml 

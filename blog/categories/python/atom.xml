@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | Healthguru Technology]]></title>
+  <link href="http://healthguru.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://healthguru.github.io/"/>
+  <updated>2014-01-31T01:42:50-05:00</updated>
+  <id>http://healthguru.github.io/</id>
+  <author>
+    <name><![CDATA[Healthguru]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[StartUp Ipsum]]></title>
+    <link href="http://healthguru.github.io/blog/2014/01/31/startup-ipsum/"/>
+    <updated>2014-01-31T00:45:20-05:00</updated>
+    <id>http://healthguru.github.io/blog/2014/01/31/startup-ipsum</id>
+    <content type="html"><![CDATA[<h2><strong>Lorem lean</strong></h2>
+
+<p>startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B
+testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding
+freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic
+investor.
+Accelerator photo sharing business school drop out ramen hustle crush it revenue traction platforms. Coworking viral
+landing page user base minimum viable product <!-- more --> hackathon API mashup FB Connect. Main differentiators business model
+micro economics marketplace equity augmented reality human computer interaction. Board members super angel preferred
+stock.
+Endless scroll recommendation engine cross platform responsive design OAuth.</p>
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">CliArgs</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">cliargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cliargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;{!s}{!r}&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c">#  init cross-platform colored output</span>
+    <span class="n">colorama</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">subparsers</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">()</span>
+
+    <span class="n">install_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;install&#39;</span><span class="p">)</span>
+    <span class="n">install_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;install&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ZERO_OR_MORE</span><span class="p">)</span>
+
+    <span class="n">install_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;reinstall&#39;</span><span class="p">)</span>
+    <span class="n">install_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;reinstall&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ZERO_OR_MORE</span><span class="p">)</span>
+
+    <span class="n">install_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;uninstall&#39;</span><span class="p">)</span>
+    <span class="n">install_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;uninstall&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ZERO_OR_MORE</span><span class="p">)</span>
+
+    <span class="n">list_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;list&#39;</span><span class="p">)</span>
+    <span class="n">list_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;list&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;store_true&#39;</span><span class="p">)</span>
+
+    <span class="n">git_hooks</span> <span class="o">=</span> <span class="n">GitHooks</span><span class="p">(</span><span class="n">cliargs</span><span class="o">=</span><span class="n">CliArgs</span><span class="p">(</span><span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())))</span>
+</code></pre></div>
+<hr>
+
+<p><em>Tablet publishing HTML5 mobile first really simple syndication meetups white board walls. User experience iterate
+algorithm gamification semantic web value add market research stealth. Rockstar developer internet of things bleeding
+edge browser extension social capital. Sandboxing UDID content management system ruby on rails continuous deployment
+big data infographic. Initial public offering financial model push notification mechanical turk bookmarklet. Term sheet
+convertible note colluding bootstrapping. Cloud computing subscription model out of the box proactive solution.</em></p>
+]]></content>
+  </entry>
+  
+</feed>

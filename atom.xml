@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Healthguru Technology]]></title>
+  <link href="http://healthguru.github.io/atom.xml" rel="self"/>
+  <link href="http://healthguru.github.io/"/>
+  <updated>2014-01-31T01:42:50-05:00</updated>
+  <id>http://healthguru.github.io/</id>
+  <author>
+    <name><![CDATA[Healthguru]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fillerati]]></title>
+    <link href="http://healthguru.github.io/blog/2014/01/31/fillerati/"/>
+    <updated>2014-01-31T00:52:43-05:00</updated>
+    <id>http://healthguru.github.io/blog/2014/01/31/fillerati</id>
+    <content type="html"><![CDATA[<h2>This is my boss</h2>
+
+<p><strong>Jonathan Hart</strong>, a self-made millionaire, he&#39;s quite a guy. This is
+Mrs H., she&#39;s gorgeous, she&#39;s one lady who knows how to take care of herself. By the way,
+my name is Max. I take care of both of them, which ain&#39;t easy, &#39;cause when they met
+it was <em>MURDER!</em></p>
+
+<p>Children of the sun, see your time has just begun, searching for your ways, through
+adventures every day. Every day and night, with the condor in flight, with all your
+friends in tow, you search for the Cities of Gold. <em>Ah-ah-ah-ah-ah&#8230;</em> wishing for The
+Cities of Gold. <em>Ah-ah-ah-ah-ah&#8230;</em> <!-- more --> some day we will find The Cities of Gold.
+<em>Do-do-do-do ah-ah-ah, do-do-do-do, Cities of Gold. Do-do-do-do, Cities of Gold. Ah-ah-ah-ah-ah&#8230;</em>
+some day we will find The Cities of Gold.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">foreach</span><span class="p">(</span><span class="nv">$outputs</span> <span class="k">as</span> <span class="o">&amp;</span><span class="nv">$output</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'><span class="sd">/** @var Output $output */</span>
+</span><span class='line'><span class="nv">$presetId</span> <span class="o">=</span> <span class="nv">$output</span><span class="o">-&gt;</span><span class="na">getPresetId</span><span class="p">();</span>
+</span><span class='line'><span class="nv">$outputPreset</span> <span class="o">=</span> <span class="nv">$output</span><span class="o">-&gt;</span><span class="na">requestPresetById</span><span class="p">(</span><span class="nv">$presetId</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$inputFilePath</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getInput</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getInputFilePath</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$explodedInputFilePath</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nv">$inputFilePath</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$inputFilename</span> <span class="o">=</span> <span class="nb">end</span><span class="p">(</span><span class="nv">$explodedInputFilePath</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// only explode inputFilename by &#39;.&#39; if it contains a &#39;.&#39;</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$inputFilename</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$inputFilename</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nv">$explodedInputFilename</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nv">$inputFilename</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$explodedInputFilename</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nv">$filename</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nv">$explodedInputFilename</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$explodedInputFilename</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<h3><strong>Thunder, thunder, thundercats, Ho! Thundercats are on the move, Thundercats are loose.</strong></h3>
+
+<blockquote>
+<p>Feel the magic, hear the roar, Thundercats are loose. Thunder, thunder, thunder, Thundercats!
+Thunder, thunder, thunder, Thundercats! Thunder, thunder, thunder, Thundercats! Thunder,
+thunder, thunder, Thundercats! Thundercats!</p>
+</blockquote>
+
+<p>Mutley, you snickering, floppy eared hound. When courage is needed, you&#39;re never around.
+Those medals you wear on your moth-eaten chest should be there for bungling at which you
+are best. So, stop that pigeon, stop that pigeon, stop that pigeon, stop that pigeon, stop
+that pigeon, stop that pigeon, stop that pigeon. Howwww! Nab him, jab him, tab him, grab him,
+stop that pigeon now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[StartUp Ipsum]]></title>
+    <link href="http://healthguru.github.io/blog/2014/01/31/startup-ipsum/"/>
+    <updated>2014-01-31T00:45:20-05:00</updated>
+    <id>http://healthguru.github.io/blog/2014/01/31/startup-ipsum</id>
+    <content type="html"><![CDATA[<h2><strong>Lorem lean</strong></h2>
+
+<p>startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B
+testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding
+freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic
+investor.
+Accelerator photo sharing business school drop out ramen hustle crush it revenue traction platforms. Coworking viral
+landing page user base minimum viable product <!-- more --> hackathon API mashup FB Connect. Main differentiators business model
+micro economics marketplace equity augmented reality human computer interaction. Board members super angel preferred
+stock.
+Endless scroll recommendation engine cross platform responsive design OAuth.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">CliArgs</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">cliargs</span><span class="p">):</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cliargs</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">return</span> <span class="s">&quot;&quot;&quot;{!s}{!r}&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span class='line'>    <span class="c">#  init cross-platform colored output</span>
+</span><span class='line'>    <span class="n">colorama</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">subparsers</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">install_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;install&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">install_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;install&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ZERO_OR_MORE</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">install_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;reinstall&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">install_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;reinstall&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ZERO_OR_MORE</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">install_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;uninstall&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">install_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;uninstall&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ZERO_OR_MORE</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">list_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span><span class="s">&#39;list&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">list_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;list&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;store_true&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">git_hooks</span> <span class="o">=</span> <span class="n">GitHooks</span><span class="p">(</span><span class="n">cliargs</span><span class="o">=</span><span class="n">CliArgs</span><span class="p">(</span><span class="o">**</span><span class="nb">vars</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">())))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<hr>
+
+<p><em>Tablet publishing HTML5 mobile first really simple syndication meetups white board walls. User experience iterate
+algorithm gamification semantic web value add market research stealth. Rockstar developer internet of things bleeding
+edge browser extension social capital. Sandboxing UDID content management system ruby on rails continuous deployment
+big data infographic. Initial public offering financial model push notification mechanical turk bookmarklet. Term sheet
+convertible note colluding bootstrapping. Cloud computing subscription model out of the box proactive solution.</em></p>
+]]></content>
+  </entry>
+  
+</feed>

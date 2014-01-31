@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Thundercats | Healthguru Technology]]></title>
+  <link href="http://healthguru.github.io/blog/categories/thundercats/atom.xml" rel="self"/>
+  <link href="http://healthguru.github.io/"/>
+  <updated>2014-01-31T01:42:50-05:00</updated>
+  <id>http://healthguru.github.io/</id>
+  <author>
+    <name><![CDATA[Healthguru]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fillerati]]></title>
+    <link href="http://healthguru.github.io/blog/2014/01/31/fillerati/"/>
+    <updated>2014-01-31T00:52:43-05:00</updated>
+    <id>http://healthguru.github.io/blog/2014/01/31/fillerati</id>
+    <content type="html"><![CDATA[<h2>This is my boss</h2>
+
+<p><strong>Jonathan Hart</strong>, a self-made millionaire, he&#39;s quite a guy. This is
+Mrs H., she&#39;s gorgeous, she&#39;s one lady who knows how to take care of herself. By the way,
+my name is Max. I take care of both of them, which ain&#39;t easy, &#39;cause when they met
+it was <em>MURDER!</em></p>
+
+<p>Children of the sun, see your time has just begun, searching for your ways, through
+adventures every day. Every day and night, with the condor in flight, with all your
+friends in tow, you search for the Cities of Gold. <em>Ah-ah-ah-ah-ah...</em> wishing for The
+Cities of Gold. <em>Ah-ah-ah-ah-ah...</em> <!-- more --> some day we will find The Cities of Gold.
+<em>Do-do-do-do ah-ah-ah, do-do-do-do, Cities of Gold. Do-do-do-do, Cities of Gold. Ah-ah-ah-ah-ah...</em>
+some day we will find The Cities of Gold.</p>
+<div class="highlight"><pre><code class="php"><span class="x">foreach($outputs as &amp;$output) {</span>
+<span class="x">/** @var Output $output */</span>
+<span class="x">$presetId = $output-&gt;getPresetId();</span>
+<span class="x">$outputPreset = $output-&gt;requestPresetById($presetId);</span>
+<span class="x">$inputFilePath = $this-&gt;getInput()-&gt;getInputFilePath();</span>
+
+<span class="x">$explodedInputFilePath = explode(&#39;/&#39;, $inputFilePath);</span>
+<span class="x">$inputFilename = end($explodedInputFilePath);</span>
+
+<span class="x">// only explode inputFilename by &#39;.&#39; if it contains a &#39;.&#39;</span>
+<span class="x">if(strpos($inputFilename, &#39;.&#39;) === false) {</span>
+<span class="x">    $filename = $inputFilename;</span>
+<span class="x">} else {</span>
+<span class="x">    $explodedInputFilename = explode(&#39;.&#39;, $inputFilename, -1);</span>
+<span class="x">    if(count($explodedInputFilename) &gt; 1) {</span>
+<span class="x">        $filename = implode(&#39;.&#39;, $explodedInputFilename);</span>
+<span class="x">    } else {</span>
+<span class="x">        $filename = $explodedInputFilename[0];</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3><strong>Thunder, thunder, thundercats, Ho! Thundercats are on the move, Thundercats are loose.</strong></h3>
+
+<blockquote>
+<p>Feel the magic, hear the roar, Thundercats are loose. Thunder, thunder, thunder, Thundercats!
+Thunder, thunder, thunder, Thundercats! Thunder, thunder, thunder, Thundercats! Thunder,
+thunder, thunder, Thundercats! Thundercats!</p>
+</blockquote>
+
+<p>Mutley, you snickering, floppy eared hound. When courage is needed, you&#39;re never around.
+Those medals you wear on your moth-eaten chest should be there for bungling at which you
+are best. So, stop that pigeon, stop that pigeon, stop that pigeon, stop that pigeon, stop
+that pigeon, stop that pigeon, stop that pigeon. Howwww! Nab him, jab him, tab him, grab him,
+stop that pigeon now.</p>
+]]></content>
+  </entry>
+  
+</feed>
